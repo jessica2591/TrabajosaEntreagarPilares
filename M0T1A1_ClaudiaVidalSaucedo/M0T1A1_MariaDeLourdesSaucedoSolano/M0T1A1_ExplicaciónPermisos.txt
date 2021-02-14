@@ -1,0 +1,91 @@
+Explicacion de Permisos de Archivo
+
+Existen tres tipos de permisos que se pueden aplicar, estos son:
+
+1-.r que seria la inicial de read en ingles que traducido en español significa-Lectura: Otorga al grupo el permiso de poder leer el archivo. 
+2-.w que seria la inicial de write en ingles que traducido al español significa-Escritura: Otorga al grupo el permiso de poder editar el archivo pudiendo escribir en él
+3-.x que seria la inicial de execute en ingles que traducido al español significa Ejecución: Otorga al grupo el permiso de poder ejecutar el archivo. 
+
+Cuando se combinan los permisos del usuario, grupo y otros, se obtienen un número de tres cifras que conforman los permisos del archivo o del directorio.
+ 
+Ejemplo:
+
+rwx rwx rwx = 777
+
+y se leda este valor por que cada letra tiene un valor numerico
+
+r = 4
+w = 2
+x = 1
+
+y al sumarlos teda los permisos que le puedes otorgar al usuario,grupo o usuario.
+
+Es aplicado a un grupo, podrías, por ejemplo, darle a un grupo de usuarios el permiso de leer y escribir en un fichero, pero no la capacidad de poder ejecutarlo.  podrías darle los permisos de poder leer y ejecutar un archivo, pero no de poder modificarlo. Incluso puedes darle a un grupo todos los permisos de lectura, escritura y ejecución de un archivo,o ningún permiso quitándoselos todos.
+
+Visto el temas de los permisos veamos el tema de los Grupos.
+Los grupos a los que nos podremos referir son tres.
+
+1-.usuario: el propietario actual del archivo
+
+2-.grupo: un grupo de usuarios de un archivo 
+
+3-.otros: otros usuarios distintos que no se encuentran en el grupo
+
+a los 3 usuarios se les puede dar  o denegar permnisos para poder leer,escribir o ejecutar en el archivo.
+
+Ejemplos:
+
+1-.rw-------	600	El propietario tiene permisos de lectur  escritura.
+
+2-.rwx--x--x	711	El propietario lectura, escritura y ejecución, el grupo y otros solo ejecución.
+
+Si abres una terminal, y en la línea de comandos, escribes el comando ls -l, verás un listado de todos los archivos y directorios que hay dentro del directorio de trabajo actual en el que nos encontremos.
+
+Ejemplo:
+
+ -rw-rw-r = Permisos que se les otorga al usuario,grupo o otros
+
+  1 = Sobre nombre del Archivo
+
+Pedro = Nombre del Propietario
+
+Pumas = Nombre del Grupo                  
+  
+466 = Tamaño del Archivo
+
+Noviembre 24 2020 = Fecha de Modificacion
+
+20:18 = Hora en la que se creeo el Archivo
+
+texto1.txt = Nombre de la Carpeta
+
+-rw-rw-r 1 Pedro Pumas 466 Noviembre 24 2020 20:18 texto1.txt 
+
+Como se puede saber si es un Archivo o Carpeta 
+
+El primer caracter al extremo izquierdo, representa el tipo de archivo, los posibles valores para esta posición son los siguientes:
+
+- un guión representa un archivo comun (de texto, html, mp3, jpg, etc.).
+ 
+
+Explicacion de  Permisos en Carpetas
+
+chmod: Este comando se usa para cambiar permisos de una Carpeta o Archivo Básicamente, cada Carpeta tiene tres tipos de ususarios que serian propietario,grupo y otros al igual que los archivos
+
+¿Como identificar cuando es una carpeta?.
+
+por que tiene principalmete la d:que representa un directorio y contiene 10 caracteres.
+
+Permisos en carpetas :
+
+El usuario tiene todos los permisos habilitados (rwx), por lo que debe sumar 4+2+1 = 7. Solo están habilitados los permisos de lectura (r) y escritura (w) en los grupos, por lo tanto, el número entero que identificará los permisos de grupos será 6 (4+2+0). Finalmente, el resto de los usuarios solo puede leer (r) el archivo, este conjunto de permisos se representará entonces con 4 (4+0+0). Así, los permisos de este archivo estarán representados con el número 764.
+
+Lo básico que hay que recordar es que le demos dar o quitar permisos en estos niveles:
+
+Parámetro     Nivel	          Descripción
+   u	      dueño	dueño del archivo o directorio
+   g	      grupo	grupo al que pertenece el archivo
+   o	      otros	todos los demás usuarios que no son el dueño ni del grupo
+
+
+
